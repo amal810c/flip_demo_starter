@@ -25,7 +25,7 @@ function generateBox() {
 
   box.style.transform = `translate(${diffX}px, ${diffY}px)`;
 
-  box.offsetHeight;
+  box.offsetHeight; //reflow layout
 
   //4. play: animate the element to translate(0,0)
   box.style.transition = "transform 1s";
