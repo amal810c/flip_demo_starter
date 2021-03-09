@@ -23,13 +23,17 @@ function generateBox() {
   const diffX = start.x - end.x;
   const diffY = start.y - end.y;
 
-  box.style.transform = `translate(${diffX}px, ${diffY}px)`;
+  box.style.setProperty("--diffX", diffX + "px");
+  box.style.setProperty("--diffY", diffY + "px");
+
+  //box.style.transform = `translate(${diffX}px, ${diffY}px)`;
 
   box.offsetHeight; //reflow layout
 
   //4. play: animate the element to translate(0,0)
-  box.style.transition = "transform 1s";
-  box.style.transform = "translate(0,0)";
+  //box.style.transition = "transform 1s";
+  //box.style.transform = "translate(0,0)";
+  box.classList.add("animate");
 }
 
 function getRandomColor() {

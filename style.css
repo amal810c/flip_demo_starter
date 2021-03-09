@@ -14,13 +14,25 @@
 }
 
 #generator:active {
-  transform: translate(2px,2px);
+  transform: translate(2px, 2px);
   filter: brightness(105%);
-  
 }
 
 #generated {
   display: flex;
   flex-wrap: wrap;
   gap: 4px;
+}
+
+.animate {
+  animation: animate 1s;
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(var(--diffX), var(--diffY));
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
